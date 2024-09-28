@@ -1,7 +1,5 @@
 package com.dgtic.unam.register_image_service.domain;
 
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
@@ -11,7 +9,6 @@ import io.swagger.v3.oas.annotations.media.Schema.AccessMode;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -35,10 +32,8 @@ public class ImageMetadata {
     private String tamanioTile;
 
     @Schema(accessMode = AccessMode.READ_ONLY)
-    @CreatedDate
-    private LocalDateTime createdAt;
+    private String nameInBucket;
 
     @Schema(accessMode = AccessMode.READ_ONLY)
-    @LastModifiedDate
-    private LocalDateTime updatedAt;
+    private String createdAt;
 }
