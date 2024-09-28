@@ -1,5 +1,7 @@
 package com.dgtic.unam.register_image_service.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.dgtic.unam.register_image_service.domain.ImageMetadata;
 
 import jakarta.validation.Valid;
@@ -15,4 +17,7 @@ public class RegisterImageRequest {
     @Valid
     private ImageMetadata imageMetadata;
 
+    /*@NotNull(message = "La imagen es obligatoria")
+    @Valid
+    private MultipartFile file;*/
 }
