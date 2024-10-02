@@ -43,7 +43,7 @@ public interface ImageApi {
             })
     })
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    ResponseEntity<ImageMetadata> registrarImagen(
+    ResponseEntity<Object> registrarImagen(
         @NotNull @Valid @RequestPart("metadata")
         @Parameter(
             name = "metadata",

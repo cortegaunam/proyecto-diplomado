@@ -19,17 +19,19 @@ public class ImageMetadata {
     @MongoId(FieldType.OBJECT_ID)
     private String id;
     
-    @NotBlank(message="El nombre de la imagen es obligatorio")
-	private String nombre;
+    @Schema(accessMode = AccessMode.READ_ONLY)
+	private String originalName;
 
-    @NotBlank(message="El fomato de la imagen es obligatorio")
-    private String formato;
+    @Schema(accessMode = AccessMode.READ_ONLY)
+    private String format;
 
     @NotBlank(message="El método de compresión de la imagen es obligatorio")
-    private String metodoCompresion;
+    private String compressionMethod;
+
+    private String quality;
 
     @NotBlank(message="El tamaño del 'Tile' es obligatorio")
-    private String tamanioTile;
+    private String tileSize;
 
     @Schema(accessMode = AccessMode.READ_ONLY)
     private String nameInBucket;
